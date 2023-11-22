@@ -49,7 +49,7 @@
   top: 0;
 }
 
-.note-wrapper {
+.note-wrapper  {
   border: 0.5px solid black;
   max-width: 300px;
   min-height: 400px;
@@ -69,3 +69,5 @@
   position: relative;
 
 }
+
+
