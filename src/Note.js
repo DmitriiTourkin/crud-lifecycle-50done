@@ -1,7 +1,7 @@
 import {useState} from "react";
 
 export default function Note(props) {
-    const [data, setNewData] = useState({id: 0, content: ''});
+    //const [data, setNewData] = useState({id: 0, content: ''});
 
 
     return (
