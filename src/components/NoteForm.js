@@ -9,7 +9,7 @@ function submitForm(event, setNewData, setStateUploaded) {
 };
 
 
-//Отправка новой заметки на сервер (рабочий, всё сохраняется)
+// Отправка новой заметки на сервер (рабочий, всё сохраняется)
 async function addNewNote(dataForNote, uploaded, setStateUploaded, updateData) {
     if (uploaded) {
         await fetch('http://localhost:7070/notes', {
@@ -30,7 +30,7 @@ export default function NoteForm(props) {
     const [uploaded, setStateUploaded] = useState(false);
     const [dataForNote, setNewData] = useState({id: 0, content: ""})
 
-    useEffect(() => {addNewNote(dataForNote, uploaded, setStateUploaded, props.updateData)}, [uploaded]); //componentDidUpdate();
+    useEffect(() => {addNewNote(dataForNote, uploaded, setStateUploaded, props.updateData)}, [uploaded]); // componentDidUpdate();
 
     return (
         <div className='new-note-wrapper'>
