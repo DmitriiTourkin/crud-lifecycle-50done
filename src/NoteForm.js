@@ -27,8 +27,6 @@ async function addNewNote(dataForNote, updated, setStateUploaded, updateData) {
 }
 
 export default function NoteForm(props) {
-
-
     const [uploaded, setStateUploaded] = useState(false);
     const [dataForNote, setNewData] = useState({id: 0, content: ""})
 

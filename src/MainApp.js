@@ -19,11 +19,11 @@ export default function MainApp() {
 
     return (
         <div className='notes-field'>
-            <h1 className='field-title'>Notes</h1>
+            <h1 className='field-title'>Notes<button className='btn btn-dark round-button' onClick={(e) => updateData()}></button></h1>
                 <div className='notes-content'>
                     <div className='flex-container'>
                         {currentData.map(note =>
-                            <Note noteData={note} key={note.id}/>
+                            <Note noteData={note} key={note.id} updateData={updateData}/>
                         )}
                     </div>
                 </div>
