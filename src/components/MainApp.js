@@ -15,7 +15,7 @@ export default function MainApp() {
         getAllNotes().then(data => setNewData(data));
     };
 
-    useEffect(() => {getAllNotes().then(data => setNewData(data))}, []); //componentDidMount; первоначальная загрузка для рендера
+    useEffect(() => {getAllNotes().then(data => setNewData(data))}, []); 
 
     return (
         <div className='notes-field'>
