@@ -12,7 +12,7 @@ export default function Note(props) {
             },
             body: JSON.stringify(data)
         })
-        props.updateData(); //функция из главного компонента для обновления данных на странице сразу
+        props.updateData(); // Функция из главного компонента для обновления данных на странице сразу
     }
 
     return (
