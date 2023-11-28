@@ -2,27 +2,27 @@ import {useEffect, useState} from "react";
 
 function submitForm(event, setNewData, setStateUploaded) {
     event.preventDefault();
-    setNewData({id: 0, content: event.target[0].value});//загрузил данные
+    setNewData({id: 0, content: event.target[0].value});
     setStateUploaded(true);
 
-    event.target[0].value = ''; //очищаю поле
+    event.target[0].value = '';
 };
 
 
 //Отправка новой заметки на сервер (рабочий, всё сохраняется)
-async function addNewNote(dataForNote, updated, setStateUploaded, updateData) {
-    if (updated) {
-        const response = await fetch('http://localhost:7070/notes', {
+async function addNewNote(dataForNote, uploaded, setStateUploaded, updateData) {
+    if (uploaded) {
+        await fetch('http://localhost:7070/notes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(dataForNote),
         })
-        setStateUploaded(false); //вот это я передвинул
-        updateData(); //это я добавил
+        setStateUploaded(false);
+        updateData();
     } else {
-        console.log('Ты ещё не ввёл данные хоть какие-то');
+        console.log('');
     }
 }
 
@@ -37,9 +37,9 @@ export default function NoteForm(props) {
             <div className='note-wrapper'>
                 <div className="note-content">
                     <form onSubmit={(e) => submitForm(e, setNewData, setStateUploaded)}>
-                        <h1>new note ✍🏻</h1>
-                        <input className='note-content-input' type='text'/>
-                        <button className='add-new-note-btn btn btn-dark' type='submit'>Добавить</button>
+                        <h1>новая заметка ✍🏻</h1>
+                        <input className='multiline-input' type='text'/>
+                        <button className='add-new-note-btn btn btn-dark round-button send-button ' type='submit'>▶️</button>
                     </form>
                 </div>
             </div>

@@ -19,8 +19,8 @@ export default function Note(props) {
         <div className="flex-item">
             <div className='note-wrapper'>
                 <div className="note-content">
+                    <button className="btn round-button delete-button" onClick={(e) => deleteNoteHandler()}>❌</button>
                     <p>{props.noteData.content}</p>
-                    <button className="btn btn-danger round-button" onClick={(e) => deleteNoteHandler()}>Удалить</button>
                 </div>
             </div>
         </div>

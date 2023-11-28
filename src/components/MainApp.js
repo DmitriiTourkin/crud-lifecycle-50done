@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import Note from "./Note";
 import NoteForm from "./NoteForm";
 
-//Асинхронная функция  получения данных
+
 const getAllNotes = async () => {
     const response = await fetch('http://localhost:7070/notes');
     return await response.json();
@@ -19,7 +19,10 @@ export default function MainApp() {
 
     return (
         <div className='notes-field'>
-            <h1 className='field-title'>Notes<button className='btn btn-dark round-button' onClick={(e) => updateData()}></button></h1>
+            <div className='greeting-block'>
+                <h1 className='field-title'>Ваши заметки</h1>
+                <button className='btn reset-button round-button field-title' onClick={(e) => updateData()}>🔁</button>
+            </div>
                 <div className='notes-content'>
                     <div className='flex-container'>
                         {currentData.map(note =>
@@ -31,5 +34,5 @@ export default function MainApp() {
                 <NoteForm updateData={updateData}/>
             </div>
         </div>
-    )
-}
+    );
+};

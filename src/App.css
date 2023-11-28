@@ -46,6 +46,7 @@
 
 .field-title {
   position: relative;
+  width: 300px;
   top: 0;
 }
 
@@ -53,6 +54,7 @@
   border: 0.5px solid black;
   max-width: 300px;
   min-height: 400px;
+  min-width: 300px;
   margin: 15px
 }
 
@@ -71,13 +73,13 @@
 }
 
 .round-button {
+  right: 0;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  position: sticky;
-  bottom: 20px;
-  right: 100px;
   display: flex;
+  border: 1px solid black;
+  margin-top: 5px;
   justify-content: center;
   align-items: center;
   color: #fff;
@@ -86,4 +88,61 @@
 }
 
 
+.reset-button {
+  font-size: 25px;
+}
 
+
+.flex-container {
+
+  display: flex;
+
+  align-items: baseline;
+  flex-wrap: wrap;
+  align-content: flex-start;
+
+  height: 100%;
+  gap: 1px;
+
+}
+
+.flex-container > div{
+  padding: 8px;
+}
+
+
+
+.new-note-wrapper  {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 5;
+  background-color: white;
+}
+
+.send-button {
+  position: absolute;
+  margin-right: 35px;
+  margin-bottom: 30px;
+  right: 0;
+  bottom: 0;
+}
+
+.multiline-input {
+  width: 200px;
+  word-wrap: break-word;
+}
+
+.delete-button {
+  font-size: 25px;
+  position: relative;
+  right: 0;
+  background-color: white;
+}
+
+
+.greeting-block {
+  display: flex;
+  align-items: center;
+
+}
